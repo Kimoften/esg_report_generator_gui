@@ -588,23 +588,33 @@ class GRIApp(object):
         self.tab_8.setReadOnly(True)
         self.tabWidget2.addTab(self.tab_8, self.checked_disclosure_nums[2])
 
-        submit_button = QPushButton("다시하기", self.result_window)
-        submit_button.setGeometry(500, 630, 75, 23)
-        submit_button.setStyleSheet(u"background-color: rgb(0, 0, 0); color: rgb(255, 255, 255);")
-        submit_button.clicked.connect(self.restart_application)
+        # submit_button = QPushButton("다시하기", self.result_window)
+        # submit_button.setGeometry(500, 630, 75, 23)
+        # submit_button.setStyleSheet(u"background-color: rgb(0, 0, 0); color: rgb(255, 255, 255);")
+        # submit_button.clicked.connect(self.restart_application)
 
         self.result_window.show()
     
-    def restart_application(self):
-        # 현재 애플리케이션을 다시 시작하는 코드
-        QApplication.exit()
-        QCoreApplication.instance().quit()
-        app = QApplication(sys.argv)
-        MainWindow = QMainWindow()
-        ui = GRIApp()
-        ui.setupUi(MainWindow)
-        MainWindow.show()
-        sys.exit(app.exec())
+#     def restart_application(self):
+#         close_current_application()
+        
+#         # MainWindow = QMainWindow()
+#         # ui = GRIApp()
+#         # ui.setupUi(MainWindow)
+#         # MainWindow.show()
+#         # sys.exit(app.exec())
+
+# def close_current_application():
+#     QApplication.instance().quit()  # 현재 실행 중인 프로세스 종료
+#         # 새로운 프로세스 시작
+#     new_process = QApplication(sys.argv)
+#     main_window = QMainWindow()
+#     new_ui = GRIApp()
+#     new_ui.setupUi(main_window)
+#     main_window.show()
+#     sys.exit(new_process.exec_())
+    
+
 
 def Show_indexList(raw_data, key):
     index_list = get_index(raw_data, key)
